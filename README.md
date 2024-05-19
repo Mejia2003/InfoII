@@ -1,4 +1,4 @@
-# # Sistema de Gestión de Imágenes DICOM en Python
+# Sistema de Gestión de Imágenes DICOM en Python
  Bienvenido al tutorial del sistema de Gestión de Imágenes DICOM en Python, donde se abarcará la optimizanción de la gestión de datos, protegiendo la privacidad del paciente y facilitando el análisis de imágenes médicas.
  
 
@@ -35,30 +35,47 @@ Para el desarrollo del diagrama de Clases para el Sistema de Gestión de Imágen
 -  Clase Estudio
 ##### Atributos:
 ID de estudio
+
 ID de paciente
+
 Fecha de adquisición
+
 Modalidad
+
 Descripción
+
 Imágenes DICOM
+
 Información del estudio (dimensiones, etc.)
 ##### Métodos:
 Cargar estudio DICOM
+
 Anonimizar estudio
+
 Convertir a formato NIfTI
+
 Visualizar imágenes (plano único, tres planos o mosaico)
+
 Obtener información del estudio
 
 Todos los atributos de la clase Estudio tienen un encapsulamiento privado, para evitar la filtración de datos sensibles tanto del estudio como del paciente y los métodos tienen encapsulamiento público.
 
 -  Clase Paciente:
-#####Atributos:
+##### Atributos:
+
 ID de paciente
+
 Nombre del paciente
+
 Lista de estudios asociados
-#####Métodos:
+##### Métodos:
+
 Agregar estudio
+
 Consultar estudios
+
 Eliminar estudio
+
 Obtener información del paciente
 
 Todos los atributos de la clase Paciente tienen un encapsulamiento privado, para evitar la filtración de datos sensibles tanto del estudio como del paciente y los métodos tienen encapsulamiento público.
@@ -67,11 +84,17 @@ Todos los atributos de la clase Paciente tienen un encapsulamiento privado, para
 ##### Atributos:
 Lista de pacientes
 ##### Métodos:
+
 Agregar paciente
+
 Consultar paciente
+
 Eliminar paciente
+
 Buscar estudio por ID de paciente y ID de estudio
+
 Obtener lista de pacientes
+
 Obtener información del sistema
 
 Todos los atributos de la clase SistemaGestion tienen un encapsulamiento privado, para evitar la filtración de datos sensibles tanto del estudio como del paciente y los métodos tienen encapsulamiento público.
@@ -110,14 +133,14 @@ Ofrece estructuras de datos eficientes para manejar arrays multidimensionales (c
 Proporciona funciones para realizar operaciones matemáticas y científicas sobre arrays.
 Facilita el preprocesamiento y análisis de datos numéricos, incluyendo imágenes médicas.
 
-#####Nilearn:
+##### Nilearn:
 
 Librería especializada en neuroimagen:
 Ofrece herramientas para cargar, preprocesar, analizar y visualizar datos de neuroimagen.
 Incluye algoritmos para el análisis de resonancia magnética funcional (fMRI), tomografía por emisión de positrones (PET), etc.
 Permite realizar estudios de conectividad cerebral, mapeo de funciones cerebrales y otras tareas de neurociencia.
 
-#####Nilearn.plotting:
+##### Nilearn.plotting:
 
 Submódulo de nilearn para visualización de neuroimagen:
 Proporciona funciones para mostrar imágenes cerebrales 3D o 4D.
@@ -129,4 +152,4 @@ Puedes instalar los requerimientos así:
 
 ------------
 
-####Paso 3. 
+#### Paso 3. 
