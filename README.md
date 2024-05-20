@@ -152,4 +152,9 @@ Puedes instalar los requerimientos así:
 
 ------------
 
-#### Paso 3. 
+#### Paso 3. Inicio del código.
+
+El codigo se divide en 3 clases, cada una con sus respectivos atributos y métodos.
+
+Para dar inicio al codigo se empezó por la clase Estudio, la cuál 
+
