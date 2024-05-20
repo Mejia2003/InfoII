@@ -34,68 +34,69 @@ Para el desarrollo del diagrama de Clases para el Sistema de Gestión de Imágen
 
 -  Clase Estudio
 ##### Atributos:
-ID de estudio
+• ID de estudio
 
-ID de paciente
+• ID de paciente
 
-Fecha de adquisición
+• Fecha de adquisición
 
-Modalidad
+• Modalidad
 
-Descripción
+• Descripción
 
-Imágenes DICOM
+• Imágenes DICOM
 
-Información del estudio (dimensiones, etc.)
+ • Información del estudio (dimensiones, etc.)
+ 
 ##### Métodos:
-Cargar estudio DICOM
+• Cargar estudio DICOM
 
-Anonimizar estudio
+• Anonimizar estudio
 
-Convertir a formato NIfTI
+• Convertir a formato NIfTI
 
-Visualizar imágenes (plano único, tres planos o mosaico)
+• Visualizar imágenes (plano único, tres planos o mosaico)
 
-Obtener información del estudio
+• Obtener información del estudio
 
 Todos los atributos de la clase Estudio tienen un encapsulamiento privado, para evitar la filtración de datos sensibles tanto del estudio como del paciente y los métodos tienen encapsulamiento público.
 
 -  Clase Paciente:
 ##### Atributos:
 
-ID de paciente
+• ID de paciente
 
-Nombre del paciente
+• Nombre del paciente
 
-Lista de estudios asociados
+• Lista de estudios asociados
 ##### Métodos:
 
-Agregar estudio
+• Agregar estudio
 
-Consultar estudios
+• Consultar estudios
 
-Eliminar estudio
+• Eliminar estudio
 
-Obtener información del paciente
+• Obtener información del paciente
 
 Todos los atributos de la clase Paciente tienen un encapsulamiento privado, para evitar la filtración de datos sensibles tanto del estudio como del paciente y los métodos tienen encapsulamiento público.
 
 - Clase SistemaGestion:
 ##### Atributos:
-Lista de pacientes
+• Lista de pacientes
 ##### Métodos:
 
-Agregar paciente
+• Agregar paciente
 
-Consultar paciente
+• Consultar paciente
 
-Eliminar paciente
+• Eliminar paciente
 
-Buscar estudio por ID de paciente y ID de estudio
+•Buscar estudio por ID de paciente y ID de estudio
 
-Obtener lista de pacientes
+• Obtener lista de pacientes
 
-Obtener información del sistema
+• Obtener información del sistema
 
 Todos los atributos de la clase SistemaGestion tienen un encapsulamiento privado, para evitar la filtración de datos sensibles tanto del estudio como del paciente y los métodos tienen encapsulamiento público.
 
@@ -154,7 +155,34 @@ Puedes instalar los requerimientos así:
 
 #### Paso 3. Inicio del código.
 
-El codigo se divide en 3 clases, cada una con sus respectivos atributos y métodos.
+El código se divide en 3 clases, cada una con sus respectivos atributos y métodos.
 
-Para dar inicio al codigo se empezó por la clase Estudio, la cuál 
+Para dar inicio al código se empezó por la clase Estudio, la cuál encapsula la información y funcionalidad relacionada con cada estudio médico en el sistema.
+
+Proporciona métodos para cargar, manipular y transformar estudios DICOM, así como para acceder a la metadata asociada. Esta modularidad y encapsulamiento facilitan la gestión y el procesamiento de los estudios en el sistema de gestión de imágenes médicas.
+
+
+------------
+
+#### Paso 4. Punto medio del código.
+
+En este paso es esencial usar la clase paciente, ya que, es el punto medio de nuestro código y en el sistema de gestión de imágenes médicas es responsable de representar a cada paciente y almacenar los estudios asociados a él. 
+
+La clase Paciente encapsula la información relacionada con cada paciente en el sistema. Proporciona métodos para agregar, eliminar y consultar los estudios asociados a un paciente, así como para obtener detalles específicos de cada estudio. Esto permite una gestión eficiente de los datos de los pacientes y sus estudios en el sistema de gestión de imágenes médicas.
+
+------------
+
+#### Paso 5. Final del código.
+
+Para este paso nos enfocamos en la clase SistemaGestion, esta clase es el núcleo del sistema de gestión de imágenes médicas, encargada de administrar todos los pacientes y sus respectivos estudios.
+
+Dicha clase actúa como el gestor principal del sistema, permitiendo la gestión eficiente de pacientes y sus estudios. Proporciona métodos para agregar, eliminar y consultar pacientes, así como para agregar, eliminar y consultar estudios asociados a pacientes específicos. Además, proporciona un método para visualizar estudios de manera conveniente. Esto facilita la administración completa de la información médica en el sistema de gestión de imágenes médicas.
+
+------------
+
+#### Paso 6. Pruebas de funcionalidad.
+
+Realizar pruebas para cada funcionalidad implementada, para asegurar que el sistema funcione correctamente bajo diferentes escenarios.
+
+Para realizar dichas pruebas es indispensable
 
