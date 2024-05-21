@@ -103,10 +103,8 @@ Todos los atributos de la clase SistemaGestion tienen un encapsulamiento privado
 Para ver el diagrama de clase completo  con sus respectivas relaciones entre las 3 diferentes clases, por favor de click sobre  Diagrama de clase
 
 
-![Captura de pantalla 2024-05-19 144715](https://github.com/Mejia2003/InfoII/assets/159477450/cc0dacf1-3468-48b7-b3f1-2690a8831176)
 
-
-
+[![Diagrama de clase]("C:\Users\nidam\OneDrive\Imágenes\Capturas de pantalla\Captura de pantalla 2024-05-21 135154.png" "Diagrama de clase")](https://www.canva.com/design/DAGFo10vH6s/j3GNMKWpQhlk7iqYXqdw8w/edit "Diagrama de clase")
 
 
 ------------
