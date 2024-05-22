@@ -97,9 +97,7 @@ Todos los atributos de la clase Paciente tienen un encapsulamiento privado, para
 
 • Eliminar estudio
 
-
-
-Todos los atributos de la clase SistemaGestion tienen un encapsulamiento privado, para evitar la filtración de datos sensibles tanto del estudio como del paciente y los métodos tienen encapsulamiento público.
+Todos los métodos tienen encapsulamiento público.
 
 Para ver el diagrama de clase completo  con sus respectivas relaciones entre las 3 diferentes clases, por favor de click sobre  Diagrama de clase
 
@@ -121,6 +119,7 @@ Las librerías utilizadas son:
 ##### matplotlib.pyplot
 Comúnmente abreviado como plt. matplotlib es una biblioteca fundamental para crear visualizaciones estáticas, animadas e interactivas en Python.
 
+
 ##### dicom2nifti
 Diseñada específicamente para convertir archivos DICOM al formato NIfTI (Neuroimaging Informatics Technology Initiative). NIfTI es otro formato común para almacenar y compartir imágenes médicas, particularmente en la investigación de neuroimagen.
 
@@ -128,6 +127,7 @@ dicom2nifti simplifica el proceso de conversión al:
 Manejar adecuadamente los datos de imagen y metadatos DICOM.
 Asegurar la orientación y el espaciado de vóxeles correctos en la salida NIfTI.
 Ofrecer potencialmente opciones de conversión adicionales (según la versión de la biblioteca).
+
 
 ##### os
 Proporciona funciones para interactuar con el sistema operativo. Es un módulo de propósito general que puede ser útil para diversas tareas en un script de procesamiento de imágenes médicas, como:
@@ -138,6 +138,7 @@ Proporciona funciones para interactuar con el sistema operativo. Es un módulo d
 -Verificar permisos de archivos.
 -Acceder a variables de entorno.
 
+
 ##### pydicom:
 
 Librería para el manejo de archivos DICOM:
@@ -145,12 +146,14 @@ Carga y lee archivos DICOM, que son el formato estándar para almacenar imágene
 Extrae información relevante de los archivos DICOM, como datos del paciente, fecha de adquisición, modalidad de imagen, etc.
 Permite manipular y procesar datos de imagen DICOM.
 
+
 ##### Nilearn:
 
 Librería especializada en neuroimagen:
 Ofrece herramientas para cargar, preprocesar, analizar y visualizar datos de neuroimagen.
 Incluye algoritmos para el análisis de resonancia magnética funcional (fMRI), tomografía por emisión de positrones (PET), etc.
 Permite realizar estudios de conectividad cerebral, mapeo de funciones cerebrales y otras tareas de neurociencia.
+
 
 ##### Nilearn.plotting:
 
