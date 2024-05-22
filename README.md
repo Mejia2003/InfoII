@@ -55,8 +55,6 @@ Para el desarrollo del diagrama de Clases para el Sistema de Gestión de Imágen
 
 • Convertir a formato NIfTI
 
-• Visualizar imágenes (plano único, tres planos o mosaico)
-
 • Obtener información del estudio
 
 Todos los atributos de la clase Estudio tienen un encapsulamiento privado, para evitar la filtración de datos sensibles tanto del estudio como del paciente y los métodos tienen encapsulamiento público.
@@ -71,19 +69,16 @@ Todos los atributos de la clase Estudio tienen un encapsulamiento privado, para 
 • Lista de estudios asociados
 ##### Métodos:
 
-• Agregar estudio
 
 • Consultar estudios
 
-• Eliminar estudio
 
 • Obtener información del paciente
 
 Todos los atributos de la clase Paciente tienen un encapsulamiento privado, para evitar la filtración de datos sensibles tanto del estudio como del paciente y los métodos tienen encapsulamiento público.
 
 - Clase SistemaGestion:
-##### Atributos:
-• Lista de pacientes
+
 ##### Métodos:
 
 • Agregar paciente
@@ -92,11 +87,17 @@ Todos los atributos de la clase Paciente tienen un encapsulamiento privado, para
 
 • Eliminar paciente
 
-•Buscar estudio por ID de paciente y ID de estudio
+• Buscar estudio por ID de paciente y ID de estudio
 
 • Obtener lista de pacientes
 
-• Obtener información del sistema
+• Agregar estudio 
+
+• Visualizar Imagen 
+
+• Eliminar estudio
+
+
 
 Todos los atributos de la clase SistemaGestion tienen un encapsulamiento privado, para evitar la filtración de datos sensibles tanto del estudio como del paciente y los métodos tienen encapsulamiento público.
 
