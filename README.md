@@ -118,6 +118,25 @@ Prepararemos el entorno de trabajo para garantizar que todas las dependencias es
 Las librerías utilizadas son:
 
 
+##### matplotlib.pyplot
+Comúnmente abreviado como plt. matplotlib es una biblioteca fundamental para crear visualizaciones estáticas, animadas e interactivas en Python.
+
+##### dicom2nifti
+Diseñada específicamente para convertir archivos DICOM al formato NIfTI (Neuroimaging Informatics Technology Initiative). NIfTI es otro formato común para almacenar y compartir imágenes médicas, particularmente en la investigación de neuroimagen.
+
+dicom2nifti simplifica el proceso de conversión al:
+Manejar adecuadamente los datos de imagen y metadatos DICOM.
+Asegurar la orientación y el espaciado de vóxeles correctos en la salida NIfTI.
+Ofrecer potencialmente opciones de conversión adicionales (según la versión de la biblioteca).
+
+##### os
+Proporciona funciones para interactuar con el sistema operativo. Es un módulo de propósito general que puede ser útil para diversas tareas en un script de procesamiento de imágenes médicas, como:
+
+-Listar archivos y directorios en una ruta específica.
+-Crear nuevos directorios.
+-Eliminar archivos o directorios.
+-Verificar permisos de archivos.
+-Acceder a variables de entorno.
 
 ##### pydicom:
 
@@ -125,13 +144,6 @@ Librería para el manejo de archivos DICOM:
 Carga y lee archivos DICOM, que son el formato estándar para almacenar imágenes médicas.
 Extrae información relevante de los archivos DICOM, como datos del paciente, fecha de adquisición, modalidad de imagen, etc.
 Permite manipular y procesar datos de imagen DICOM.
-
- ##### Numpy:
-
-Librería para computación numérica:
-Ofrece estructuras de datos eficientes para manejar arrays multidimensionales (como imágenes 3D o 4D).
-Proporciona funciones para realizar operaciones matemáticas y científicas sobre arrays.
-Facilita el preprocesamiento y análisis de datos numéricos, incluyendo imágenes médicas.
 
 ##### Nilearn:
 
@@ -148,7 +160,7 @@ Permite personalizar la visualización, como la orientación de la imagen, el ra
 Facilita la creación de figuras y gráficos para comunicar resultados de estudios neurocientíficos.
 
 Puedes instalar los requerimientos así:
-**python -m pip install numpy**
+**python -m pip install pydicom**
 
 ------------
 
@@ -167,7 +179,7 @@ Proporciona métodos para cargar, manipular y transformar estudios DICOM, así c
 
 En este paso es esencial usar la clase paciente, ya que, es el punto medio de nuestro código y en el sistema de gestión de imágenes médicas es responsable de representar a cada paciente y almacenar los estudios asociados a él. 
 
-La clase Paciente encapsula la información relacionada con cada paciente en el sistema. Proporciona métodos para agregar, eliminar y consultar los estudios asociados a un paciente, así como para obtener detalles específicos de cada estudio. Esto permite una gestión eficiente de los datos de los pacientes y sus estudios en el sistema de gestión de imágenes médicas.
+La clase Paciente encapsula la información relacionada con cada paciente en el sistema. Proporciona métodos para consultar los estudios asociados a un paciente, así como para obtener detalles específicos de cada estudio. Esto permite una gestión eficiente de los datos de los pacientes y sus estudios en el sistema de gestión de imágenes médicas.
 
 ------------
 
