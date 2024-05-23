@@ -1,4 +1,6 @@
 # Sistema de Gestión de Imágenes DICOM en Python
+
+
  Bienvenido al tutorial del sistema de Gestión de Imágenes DICOM en Python, donde se abarcará la optimizanción de la gestión de datos, protegiendo la privacidad del paciente y facilitando el análisis de imágenes médicas.
  
 
@@ -33,21 +35,7 @@ En el ámbito de la investigación clínica, la gestión de imágenes médicas y
 Para el desarrollo del diagrama de Clases para el Sistema de Gestión de Imágenes DICOM, nos enfocamos en 3 clases diferentes usando la programación orientada a objetos para diseñar clases que encapsulen las funcionalidades necesarias, promoviendo la reutilización del código y la fácil mantenibilidad.
 
 -  Clase Estudio
-##### Atributos:
-• ID de estudio
 
-• ID de paciente
-
-• Fecha de adquisición
-
-• Modalidad
-
-• Descripción
-
-• Imágenes DICOM
-
- • Información del estudio (dimensiones, etc.)
- 
 ##### Métodos:
 • Cargar estudio DICOM
 
@@ -57,28 +45,21 @@ Para el desarrollo del diagrama de Clases para el Sistema de Gestión de Imágen
 
 • Obtener información del estudio
 
-Todos los atributos de la clase Estudio tienen un encapsulamiento privado, para evitar la filtración de datos sensibles tanto del estudio como del paciente y los métodos tienen encapsulamiento público.
+
 
 -  Clase Paciente:
-##### Atributos:
 
-• ID de paciente
-
-• Nombre del paciente
-
-• Lista de estudios asociados
 ##### Métodos:
-
 
 • Consultar estudios
 
 
 • Obtener información del paciente
 
-Todos los atributos de la clase Paciente tienen un encapsulamiento privado, para evitar la filtración de datos sensibles tanto del estudio como del paciente y los métodos tienen encapsulamiento público.
 
 - Clase SistemaGestion:
-
+##### Atributos 
+• Lista paciente
 ##### Métodos:
 
 • Agregar paciente
@@ -173,7 +154,12 @@ El código se divide en 3 clases, cada una con sus respectivos atributos y méto
 
 Para dar inicio al código se empezó por la clase Estudio, la cuál encapsula la información y funcionalidad relacionada con cada estudio médico en el sistema.
 
-Proporciona métodos para cargar, manipular y transformar estudios DICOM, así como para acceder a la metadata asociada. Esta modularidad y encapsulamiento facilitan la gestión y el procesamiento de los estudios en el sistema de gestión de imágenes médicas.
+La clase Estudio tiene como objetivo gestionar y manipular estudios DICOM. Su constructor inicializa los atributos relacionados con la información del paciente, fecha, modalidad, descripción del estudio, imágenes DICOM y dimensiones de las imágenes.
+El método anonimizarEstudio permite anonimizar los estudios, reemplazando o enmascarando la información sensible del paciente en los archivos DICOM de una carpeta específica.
+
+El método visualizarImagenes visualiza las imágenes NIfTI de un estudio, permitiendo elegir diferentes modos de visualización (por ejemplo, ortogonal, en un solo plano, o en mosaico).
+
+El método obtenerInfoEstudio extrae y muestra información relevante de un estudio DICOM, como la fecha de adquisición, modalidad, descripción y dimensiones de la imagen, a partir de los archivos DICOM de una carpeta específica.
 
 
 ------------
@@ -182,7 +168,7 @@ Proporciona métodos para cargar, manipular y transformar estudios DICOM, así c
 
 En este paso es esencial usar la clase paciente, ya que, es el punto medio de nuestro código y en el sistema de gestión de imágenes médicas es responsable de representar a cada paciente y almacenar los estudios asociados a él. 
 
-La clase Paciente encapsula la información relacionada con cada paciente en el sistema. Proporciona métodos para consultar los estudios asociados a un paciente, así como para obtener detalles específicos de cada estudio. Esto permite una gestión eficiente de los datos de los pacientes y sus estudios en el sistema de gestión de imágenes médicas.
+La clase Paciente tiene como objetivo gestionar la información de los pacientes, incluyendo su ID y nombre. El método obtener_nombres_pacientes recibe una carpeta como argumento y busca archivos dentro de ella para extraer nombres de pacientes a partir de los nombres de archivo. Los nombres se separan por un guión bajo ('_') y se añaden a una lista llamada listaPacientes, mientras que los IDs se añaden a una lista llamada IDpacientes. Si la carpeta está vacía, se muestra un mensaje de error indicando que no hay carpetas de pacientes.
 
 ------------
 
@@ -190,7 +176,30 @@ La clase Paciente encapsula la información relacionada con cada paciente en el 
 
 Para este paso nos enfocamos en la clase SistemaGestion, esta clase es el núcleo del sistema de gestión de imágenes médicas, encargada de administrar todos los pacientes y sus respectivos estudios.
 
-Dicha clase actúa como el gestor principal del sistema, permitiendo la gestión eficiente de pacientes y sus estudios. Proporciona métodos para agregar, eliminar y consultar pacientes, así como para agregar, eliminar y consultar estudios asociados a pacientes específicos. Además, proporciona un método para visualizar estudios de manera conveniente. Esto facilita la administración completa de la información médica en el sistema de gestión de imágenes médicas.
+La clase sistemaGestion se encarga de gestionar el sistema de gestión de pacientes y estudios. Algunos de los métodos importantes incluyen:
+
+•	agregarEstudio: Agrega un estudio DICOM a un paciente existente o crea un nuevo paciente si no existe. Convierte las imágenes DICOM a formato NIfTI y las guarda en las carpetas correspondientes.
+
+•	agregarPacientes: Agrega un nuevo paciente al sistema.
+
+•	consultarPacientes: Consulta si un paciente existe en el sistema.
+
+•	eliminarPaciente: Elimina un paciente del sistema, incluidos sus estudios.
+
+•	buscarEstudio: Busca un estudio de un paciente y muestra la ruta de acceso al estudio DICOM y NIfTI.
+
+•	eliminarEstudio: Elimina un estudio de un paciente.
+
+•	infoEstudio: Obtiene información de un estudio DICOM.
+
+•	visualizar: Permite visualizar estudios NIfTI en diferentes modos (ortogonal, un solo plano, mosaico).
+
+•	anonimizarEstudio: Anonimiza un estudio DICOM, eliminando o enmascarando la información sensible del paciente.
+
+•	listaPacientes: Obtiene una lista de los nombres de los pacientes en el sistema.
+
+La clase utiliza asociación con la clase Estudio y Paciente para acceder a métodos específicos de esas clases. También incluye la definición de atributos como la carpeta de pacientes, nombre, ID del paciente, y las carpetas para los estudios DICOM y NIfTI.
+
 
 ------------
 
@@ -198,5 +207,123 @@ Dicha clase actúa como el gestor principal del sistema, permitiendo la gestión
 
 Realizar pruebas para cada funcionalidad implementada, para asegurar que el sistema funcione correctamente bajo diferentes escenarios.
 
-Para realizar dichas pruebas es indispensable
+Para realizar dichas pruebas es indispensable hacer uso de un menú que contenga todas las opcciones de los métodos que se plantearón en cada una de las 3 clase.
+
+###### El menú es el siguiente: 
+
+sistema=sistemaGestion()
+while True:
+
+    menu=input('Ingrese la opción a la que desea ingresar:\n1. Agregar paciente\n2. Consultar paciente\n3. Eliminar paciente\n4. Cargar estudio\n5. Buscar estudio\n6. Eliminar estudio\n7. Obtener información del estudio\n8. Visualizar imagen\n9. Obtener lista de pacientes\n10. Anonimizar estudio\n11. Salir')
+    
+    menu=validar(menu,int)
+    
+    if menu=='1':
+    
+        nombre=input('Ingrese el nombre del paciente\n')
+        
+        nombre=validar(nombre,str)
+        
+        ID=input('Ingrese el ID del paciente\n')
+        
+        sistema.agregarPacientes(nombre,ID)
+        
+    elif menu=='2':
+    
+        nombre=input('Ingrese el nombre del paciente\n')
+        
+        nombre=validar(nombre,str)
+        
+        ID=input('Ingrese el ID del paciente\n')
+        
+        sistema.consultarPacientes(nombre,ID)
+        
+    elif menu=='3':
+    
+        nombre=input('Ingrese el nombre del paciente\n')
+        
+        nombre=validar(nombre,str)
+        
+        ID=input('Ingrese el ID del paciente\n')
+        
+        sistema.eliminarPaciente(nombre,ID)
+        
+    elif menu=='4':
+        carpetaDICOM=input('Ingrese la ruta de la carpeta DICOM que desea cargar\n')
+        
+        sistema.agregarEstudio(carpetaDICOM)
+        
+    elif menu=='5':
+    
+        nombre=input('Ingrese el nombre del paciente\n')
+        
+        nombre=validar(nombre,str)
+        
+        ID=input('Ingrese el ID del paciente\n')
+        
+        sistema.buscarEstudio(nombre,ID)
+        
+    elif menu=='6':
+    
+        nombre=input('Ingrese el nombre del paciente\n')
+        
+        nombre=validar(nombre,str)
+        
+        ID=input('Ingrese el ID del paciente\n')
+        
+        sistema.eliminarEstudio(nombre,ID)
+        
+    elif menu=='7':
+    
+        carpetaDICOM=input('Ingrese la ruta de la carpeta DICOM que desea cargar\n')
+
+       
+        sistema.infoEstudio(carpetaDICOM)
+        
+    elif menu=='8':
+    
+        carpetaNifti=input('Ingrese la dirección del estudio NIFTI')
+        
+        sistema.visualizar(carpetaNifti)
+        
+    elif menu=='9':
+    
+        sistema.listaPacientes()
+        
+    elif menu=='10':
+    
+        carpetaDICOM=input('Ingrese la ruta de la carpeta DICOM que desea anonimizar\n')
+        
+        sistema.anonimizarEstudio(carpetaDICOM)
+        
+    elif menu=='11':
+    
+        break
+        
+    else:
+    
+        print('Opción no válida')
+    print('Gracias por utilizar nuestro sistema de gestión.')
+
+
+
+Es un menú interactivo para gestionar pacientes y estudios médicos a través de la instancia sistema de la clase sistemaGestion. Ya con dicho menú se hizo mas fácil realizar la prueba para verificar que el código funcionará. El ciclo While donde por teclado se ingresa las opcciones que sean requqeridas, y por medio del llamado de las funciones, las relaciones entre las clases y a los archivos proporcionados previamente permiten que se ejecuten las diversas opcciones del menú.
+
+Es indispensable validar que los valores ingresados por los usuarios.
+
+Para realizar las pruebas de funcionalidad se le brindó al código pedir directamete la dirección de los archivos tanto Dicom como nifti, ya que se consideró que era más simple hacerlo de dicha manera. 
+
+-----------------------------
+###### Este sistema de gestión de ímagenes Dicom en PYthon fue realizado por:
+Pablo Andres Aristizabal
+
+Alma Olea
+
+Nicole Dayanne Mejia
+
+Laura Alzate 
+
+
+
+
 
