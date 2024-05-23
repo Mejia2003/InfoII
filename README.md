@@ -116,11 +116,11 @@ Prepararemos el entorno de trabajo para garantizar que todas las dependencias es
 Las librerías utilizadas son:
 
 
-##### matplotlib.pyplot
+##### Matplotlib.pyplot
 Comúnmente abreviado como plt. matplotlib es una biblioteca fundamental para crear visualizaciones estáticas, animadas e interactivas en Python.
 
 
-##### dicom2nifti
+##### Dicom2nifti
 Diseñada específicamente para convertir archivos DICOM al formato NIfTI (Neuroimaging Informatics Technology Initiative). NIfTI es otro formato común para almacenar y compartir imágenes médicas, particularmente en la investigación de neuroimagen.
 
 dicom2nifti simplifica el proceso de conversión al:
@@ -131,12 +131,7 @@ Ofrecer potencialmente opciones de conversión adicionales (según la versión d
 ##### Numpy
 Es una librería fundamental para la computación científica en Python. Proporciona soporte para arreglos multidimensionales, junto con una gran colección de funciones matemáticas de alto nivel para operar en estos arreglos. NumPy es eficiente en términos de memoria y computación, y es ampliamente utilizado en el procesamiento de imágenes, el análisis de señales, el álgebra lineal, la simulación y otros campos.
 
-##### Nibable
-Se utiliza principalmente para leer y escribir archivos de imágenes médicas en formatos como NIfTI y ANALYZE, que son formatos estándar para imágenes de resonancia magnética (MRI), tomografía computarizada (CT), y otras modalidades de imágenes médicas.
-
-NiBabel proporciona una interfaz para acceder a los datos de estas imágenes, así como para realizar operaciones como la manipulación de la orientación, el espaciado entre los píxeles, la manipulación de las dimensiones de la imagen, entre otras.
-
-##### os
+##### Os
 Proporciona funciones para interactuar con el sistema operativo. Es un módulo de propósito general que puede ser útil para diversas tareas en un script de procesamiento de imágenes médicas, como:
 
 -Listar archivos y directorios en una ruta específica.
@@ -146,7 +141,7 @@ Proporciona funciones para interactuar con el sistema operativo. Es un módulo d
 -Acceder a variables de entorno.
 
 
-##### pydicom:
+##### Pydicom:
 
 Librería para el manejo de archivos DICOM:
 Carga y lee archivos DICOM, que son el formato estándar para almacenar imágenes médicas.
