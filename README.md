@@ -128,6 +128,13 @@ Manejar adecuadamente los datos de imagen y metadatos DICOM.
 Asegurar la orientación y el espaciado de vóxeles correctos en la salida NIfTI.
 Ofrecer potencialmente opciones de conversión adicionales (según la versión de la biblioteca).
 
+##### Numpy
+Es una librería fundamental para la computación científica en Python. Proporciona soporte para arreglos multidimensionales, junto con una gran colección de funciones matemáticas de alto nivel para operar en estos arreglos. NumPy es eficiente en términos de memoria y computación, y es ampliamente utilizado en el procesamiento de imágenes, el análisis de señales, el álgebra lineal, la simulación y otros campos.
+
+##### Nibable
+Se utiliza principalmente para leer y escribir archivos de imágenes médicas en formatos como NIfTI y ANALYZE, que son formatos estándar para imágenes de resonancia magnética (MRI), tomografía computarizada (CT), y otras modalidades de imágenes médicas.
+
+NiBabel proporciona una interfaz para acceder a los datos de estas imágenes, así como para realizar operaciones como la manipulación de la orientación, el espaciado entre los píxeles, la manipulación de las dimensiones de la imagen, entre otras.
 
 ##### os
 Proporciona funciones para interactuar con el sistema operativo. Es un módulo de propósito general que puede ser útil para diversas tareas en un script de procesamiento de imágenes médicas, como:
