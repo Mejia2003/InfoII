@@ -116,8 +116,6 @@ Prepararemos el entorno de trabajo para garantizar que todas las dependencias es
 Las librerías utilizadas son:
 
 
-##### Matplotlib.pyplot
-Comúnmente abreviado como plt. matplotlib es una biblioteca fundamental para crear visualizaciones estáticas, animadas e interactivas en Python.
 
 
 ##### Dicom2nifti
